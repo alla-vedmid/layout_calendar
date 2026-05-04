@@ -4,7 +4,7 @@ $gap: 1px;
 $padding: 10px;
 $columns: 7;
 $bg-color: #eee;
-$hover-color: #ffbfcb;
+$hover-color: #FFBFCB;
 $transition-speed: 0.5s;
 $cells-part: $cell-size * $columns;
 $gaps-part: $gap * ($columns - 1);
@@ -39,9 +39,7 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     font-size: 30px;
-    transition:
-      background-color $transition-speed,
-      transform $transition-speed;
+    transition: background-color $transition-speed, transform $transition-speed;
 
     &:hover {
       cursor: pointer;
@@ -52,7 +50,7 @@ body {
 
     @for $i from 1 through 31 {
       &:nth-child(#{$i})::before {
-        content: '#{$i}';
+        content: "#{$i}";
       }
     }
   }
@@ -64,7 +62,7 @@ body {
     thu: 3,
     fri: 4,
     sat: 5,
-    sun: 6,
+    sun: 6
   );
 
   @each $name, $order in $days {
