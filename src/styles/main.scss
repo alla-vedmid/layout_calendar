@@ -12,42 +12,50 @@ $paddings-part: $padding * 2;
 $calendar-width: ($cells-part + $gaps-part + $paddings-part);
 
 body {
-  margin: 0;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   min-height: 100vh;
+  margin: 0;
 }
 
 .calendar {
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+
   width: $calendar-width;
+
   padding: $padding;
-  box-sizing: border-box;
   gap: $gap;
 
   &__day {
-    position: relative;
-    flex: 0 0 $cell-size;
-    height: $cell-size;
-    background-color: $bg-color;
-    border: $border-width solid black;
     box-sizing: border-box;
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex: 0 0 $cell-size;
+
+    height: $cell-size;
+
+    border: $border-width solid black;
+    background-color: $bg-color;
+
     font-family: Arial, sans-serif;
     font-size: 30px;
+
     transition:
       background-color $transition-speed,
       transform $transition-speed;
 
     &:hover {
       cursor: pointer;
-      background-color: $hover-color;
-      transform: translateY(-20px);
       z-index: 10;
+      transform: translateY(-20px);
+      background-color: $hover-color;
     }
 
     @for $i from 1 through 31 {
