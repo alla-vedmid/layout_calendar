@@ -12,40 +12,50 @@ $paddings-part: $padding * 2;
 $calendar-width: ($cells-part + $gaps-part + $paddings-part);
 
 body {
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
   min-height: 100vh;
   margin: 0;
 }
 
 .calendar {
-  box-sizing: border-box;
+  $days: (
+    mon: 0,
+    tue: 1,
+    wed: 2,
+    thu: 3,
+    fri: 4,
+    sat: 5,
+    sun: 6,
+  );
+
   display: flex;
   flex-wrap: wrap;
-
-  width: $calendar-width;
-
-  padding: $padding;
   gap: $gap;
 
+  box-sizing: border-box;
+  width: $calendar-width;
+  padding: $padding;
+
   &__day {
-    box-sizing: border-box;
     position: relative;
+
     display: flex;
+    flex: 0 0 $cell-size;
     align-items: center;
     justify-content: center;
-    flex: 0 0 $cell-size;
 
+    box-sizing: border-box;
     height: $cell-size;
-
     border: $border-width solid black;
-    background-color: $bg-color;
 
     font-family: Arial, sans-serif;
     font-size: 30px;
+
+    background-color: $bg-color;
 
     transition:
       background-color $transition-speed,
@@ -64,16 +74,6 @@ body {
       }
     }
   }
-
-  $days: (
-    mon: 0,
-    tue: 1,
-    wed: 2,
-    thu: 3,
-    fri: 4,
-    sat: 5,
-    sun: 6,
-  );
 
   @each $name, $order in $days {
     &--start-day-#{$name} {
