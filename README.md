@@ -1,6 +1,6 @@
 # Calendar
 
-Display a calendar in the middle of the screen (both horizontally and vertically). Use SCSS and follow BEM. Don't use JS.
+Display a calendar in the middle of the screen (both horizontally and vertically). Use SCSS and follow BEM. Don't use Javascript.
 
 - Write styles in `src/styles/main.scss` instead of `src/style.css`.
 - Create a markup for the calendar block with 31 days inside
@@ -14,10 +14,10 @@ Display a calendar in the middle of the screen (both horizontally and vertically
   - Use [@each](https://sass-lang.com/documentation/at-rules/control/each) to create all the modifiers
   - The month should start at the correct column (Monday is the 1st, Friday is the 5th)
   - You can just add correct `margin-left` for the first day
-  - Set calendar to start from Sunday by default
+  - Set calendar to start from Sunday by default in your HTML
 - Add a modifier `month-length` for the `calendar` with values 28, 29, 30 and 31 (use `@for`)
   - It sets the last day to show (use [nth-child](https://css-tricks.com/how-nth-child-works/))
-  - Set 31 days by default
+  - Set 31 days by default in your HTML
 
 On hovering over a cell:
 - cursor should become pointer
@@ -25,7 +25,7 @@ On hovering over a cell:
 - Move the hovered cell up by `20px` (use `transform`)
 - All changes should be animated with the duration of 0.5s
 
-> Here are the [Layout Tasks Instruction](https://github.com/mate-academy/layout_task-guideline#how-to-solve-the-layout-tasks-on-github)
+> Here are the [Layout Tasks Instructions](https://mate-academy.github.io/layout_task-guideline)
 
 *Important note*: In this task, you are allowed to link `*.scss` files directly in HTML `<link>` tags using `href` attribute.
 This is possible because [we use the Parcel library](https://en.parceljs.org/scss.html) to bundle your solution's source code.
